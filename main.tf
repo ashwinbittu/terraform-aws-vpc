@@ -7,12 +7,10 @@ resource "aws_vpc" "main" {
   enable_dns_hostnames = "true"
   enable_classiclink   = "false"
   tags = {
-    #Name = "${var.app_name}-vpc-${var.app_color}"
     Name = "${var.app_name}-vpc"
     environment  = var.app_env
     appname = var.app_name
     csiappid = var.app_csi
-    #appcolor = var.app_color
   }
 }
 
@@ -25,12 +23,10 @@ resource "aws_subnet" "main-public" {
   map_public_ip_on_launch = true
 
   tags = {
-    #Name = "${var.app_name}-public-subnet-${var.app_color}-${count.index + 1}"
     Name = "${var.app_name}-public-subnet-${count.index + 1}"
     environment  = var.app_env
     appname = var.app_name
     csiappid = var.app_csi
-    #appcolor = var.app_color
   }
 }
 
@@ -38,12 +34,10 @@ resource "aws_internet_gateway" "main-gw" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    #Name = "${var.app_name}-gw-${var.app_color}"
     Name = "${var.app_name}-gw"
     environment  = var.app_env
     appname = var.app_name
     csiappid = var.app_csi
-    #appcolor = var.app_color
   }
 }
 
@@ -55,12 +49,10 @@ resource "aws_route_table" "main-rtable" {
   }
 
   tags = {
-    #Name = "${var.app_name}-rtable-${var.app_color}"
     Name = "${var.app_name}-rtable"
     environment  = var.app_env
     appname = var.app_name
     csiappid = var.app_csi
-    #appcolor = var.app_color
   }
 }
 
