@@ -16,9 +16,6 @@ variable "app_name" {
 variable "app_csi" {
 }
 
-variable "app_color" {
-}
-
 variable "aws_vpc_instance_tenancy" {
 }
 
