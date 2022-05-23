@@ -10,7 +10,7 @@ resource "aws_vpc" "main" {
     Name = "${var.app_name}-vpc"
     environment  = var.app_env
     appname = var.app_name
-    csiappid = var.app_csi
+    appid = var.app_id
   }
 }
 
@@ -26,7 +26,7 @@ resource "aws_subnet" "main-public" {
     Name = "${var.app_name}-public-subnet-${count.index + 1}"
     environment  = var.app_env
     appname = var.app_name
-    csiappid = var.app_csi
+    appid = var.app_id
   }
 }
 
@@ -37,7 +37,7 @@ resource "aws_internet_gateway" "main-gw" {
     Name = "${var.app_name}-gw"
     environment  = var.app_env
     appname = var.app_name
-    csiappid = var.app_csi
+    appid = var.app_id
   }
 }
 
@@ -52,7 +52,7 @@ resource "aws_route_table" "main-rtable" {
     Name = "${var.app_name}-rtable"
     environment  = var.app_env
     appname = var.app_name
-    csiappid = var.app_csi
+    appid = var.app_id
   }
 }
 
