@@ -1,6 +1,3 @@
-variable "aws_region" {
-}
-
 variable "no_of_subnets" {
 }
 
